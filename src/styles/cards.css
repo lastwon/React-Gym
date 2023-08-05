@@ -1,0 +1,94 @@
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 120px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1700px;
+}
+
+.first-time,
+.memberships {
+  position: relative;
+  background-image: url("../images/first-timer.webp");
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  width: 50%;
+  max-height: 600px;
+  height: 50vw;
+  color: rgb(255, 255, 255);
+  transition: width 0.3s ease 0s;
+}
+
+.memberships {
+  background-image: url(../images/memberships.webp);
+}
+
+.first-time::before,
+.memberships::before {
+  position: absolute;
+  inset: 0px;
+  content: "";
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.first-time:hover,
+.memberships:hover {
+  width: 70%;
+}
+
+.cards button h3 {
+  position: relative;
+  line-height: 20px;
+  font-size: 20px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.cards button p {
+  position: relative;
+  text-align: center;
+  line-height: 16px;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0px;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.3s;
+}
+
+.cards button:hover p,
+.cards button:hover span {
+  opacity: 1;
+}
+
+.cards button span {
+  position: absolute;
+  text-decoration: none;
+  right: 32px;
+  bottom: 32px;
+  color: rgb(238, 238, 238);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  transition: opacity 0.3s ease 0.3s;
+  opacity: 0;
+}
+
+.cards button span::before {
+  content: "";
+  width: 16px;
+  height: 1px;
+  left: -24px;
+  top: 6px;
+  display: block;
+  position: absolute;
+  background: rgb(238, 238, 238);
+}
