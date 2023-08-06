@@ -23,7 +23,7 @@ const MainInfo = () => {
         </div>
       </div>
       <div className="container">
-        <div className="text-container">
+        <div className="text-container" style={{ marginBottom: "60px" }}>
           <h2>Our concepts</h2>
           <p>
             We offer 7 contagious Holy Concepts divided over 2 clubs. Inspired

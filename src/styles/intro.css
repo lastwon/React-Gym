@@ -33,6 +33,7 @@ video {
   color: rgb(255, 255, 255);
   margin-bottom: 16px;
   letter-spacing: 14.86px;
+  font-family: FSHackney-regular, sans-serif;
 }
 
 .btn-primary {

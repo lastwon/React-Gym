@@ -1,0 +1,63 @@
+.carousel-cards {
+  position: relative;
+  display: flex;
+  margin-bottom: 120px;
+  overflow-x: scroll;
+}
+
+.splide {
+  margin-bottom: 120px;
+  cursor: grab;
+}
+
+.splide:active {
+  cursor: grabbing;
+}
+
+.splide .splide__arrow--prev {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  background-color: transparent;
+  color: black;
+}
+
+.splide .splide__arrow--next {
+  position: absolute;
+  top: 105%;
+  left: 2%;
+  background-color: transparent;
+  color: black;
+}
+
+.carousel-card {
+  background-position: center;
+  background-size: cover;
+  min-width: 500px;
+  height: 500px;
+}
+
+.carousel-card-content {
+  color: rgb(255, 255, 255);
+  position: absolute;
+  bottom: 0;
+  padding: 16px 40px 40px;
+}
+
+.carousel-card-content h3 {
+  line-height: 20px;
+  font-size: 20px;
+  margin: 0px 0px 4px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+
+.carousel-card-content p {
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0px;
+  letter-spacing: 1px;
+}

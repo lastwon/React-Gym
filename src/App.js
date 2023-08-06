@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import Cards from "./components/Cards";
 import MainInfo from "./components/MainInfo";
+import Carousel from "./components/Carousel";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Hero />
       <Cards />
       <MainInfo />
+      <Carousel />
     </>
   );
 };
