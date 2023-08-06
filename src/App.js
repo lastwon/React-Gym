@@ -5,6 +5,7 @@ import "./styles/index.css";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import Cards from "./components/Cards";
+import MainInfo from "./components/MainInfo";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Nav />
       <Hero />
       <Cards />
+      <MainInfo />
     </>
   );
 };
