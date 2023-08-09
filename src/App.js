@@ -8,6 +8,7 @@ import Cards from "./components/Cards";
 import MainInfo from "./components/MainInfo";
 import Carousel from "./components/Carousel";
 import BuyWorkouts from "./components/BuyWorkouts";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <MainInfo />
       <Carousel />
       <BuyWorkouts />
+      <Footer />
     </>
   );
 };
