@@ -1,0 +1,42 @@
+.buy-workouts {
+  position: relative;
+  background-image: url(../images/buy-workouts.webp);
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  height: 552px;
+  margin-bottom: 120px;
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  color: rgb(255, 255, 255);
+  max-width: 500px;
+}
+
+.banner-content h1 {
+  line-height: 64px;
+  font-family: var(--font-hackey);
+  font-size: 64px;
+  margin: 24px 0px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.banner-content p {
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0px 0px 24px;
+  font-family: var(--font-hackey);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.banner-content button {
+  float: left;
+  margin-top: 0;
+}

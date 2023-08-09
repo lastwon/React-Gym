@@ -7,6 +7,7 @@ import Hero from "./components/Hero";
 import Cards from "./components/Cards";
 import MainInfo from "./components/MainInfo";
 import Carousel from "./components/Carousel";
+import BuyWorkouts from "./components/BuyWorkouts";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Cards />
       <MainInfo />
       <Carousel />
+      <BuyWorkouts />
     </>
   );
 };
