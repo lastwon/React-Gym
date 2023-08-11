@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "../styles/nav.css";
+import HamburgerMenu from "./HamburgerMenu";
 
 const Nav = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const handleOpenMenu = () => {
+    setOpenMenu(!openMenu);
+  };
+
   return (
     <nav>
-      <button className="nav-menu">
+      <button onClick={handleOpenMenu} className="nav-menu">
         <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor">
           <path
             d="M0 12h18v-2H0v2Zm0-5h18V5H0v2Zm0-7v2h18V0H0Z"
@@ -13,6 +20,9 @@ const Nav = () => {
           ></path>
         </svg>
       </button>
+      {openMenu && (
+        <HamburgerMenu openMenu={openMenu} setOpenMenu={setOpenMenu} />
+      )}
       <div className="logo">
         <svg viewBox="0 0 349 69" fill="none" width="262" height="52">
           <path
