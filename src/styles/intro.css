@@ -56,3 +56,24 @@ video {
   padding: 17px 31px;
   margin: 75px auto 0 auto;
 }
+
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2px;
+  height: 48px;
+  border-radius: 48px;
+  font-size: 14px;
+  line-height: normal;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  border: medium;
+  background-color: rgb(255, 255, 255);
+  color: rgb(41, 22, 186);
+  padding: 17px 31px;
+  width: 100%;
+}

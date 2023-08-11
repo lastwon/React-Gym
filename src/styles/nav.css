@@ -25,7 +25,7 @@ nav {
   left: 50%;
   top: 30px;
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 11;
 }
 
 .log-in {
@@ -42,18 +42,19 @@ nav {
   padding: 0 12px;
 }
 
-.log-in p {
+.log-in a {
   display: block;
   color: rgb(41, 22, 186);
   font-size: 14px;
   padding: 0px 10px;
   font-weight: 400;
+  text-decoration: none;
 }
 
-.log-in p:nth-child(2) {
+.log-in a:nth-child(2) {
   border-right: 1px solid rgb(41, 22, 186);
 }
 
-.log-in p:nth-child(3) {
+.log-in a:nth-child(3) {
   font-weight: bold;
 }
