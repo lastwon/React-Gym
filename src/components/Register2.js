@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Register2 = ({ newUser, step, setNewUser, disabledButton }) => {
+const Register2 = ({ newUser, step, setNewUser, disabledButton, error }) => {
   return (
     <>
-      <h2>Welcome to the Tribe qwe! You are almost ready.</h2>
+      <h2>Welcome to the Tribe {newUser.first_name}! You are almost ready.</h2>
       <div className="form-field">
-        <label>Email address</label>
         <input
+          id="email"
           value={newUser?.email}
           onChange={(e) =>
             setNewUser((prev) => ({
@@ -17,10 +17,14 @@ const Register2 = ({ newUser, step, setNewUser, disabledButton }) => {
           }
           type="text"
         />
+        <label htmlFor="email" style={{ color: newUser?.email ? "white" : "" }}>
+          Email address
+        </label>
+        {error.email && <span className="error-text">{error.email}</span>}
       </div>
       <div className="form-field">
-        <label>Password</label>
         <input
+          id="password"
           value={newUser?.password}
           onChange={(e) =>
             setNewUser((prev) => ({
@@ -30,10 +34,14 @@ const Register2 = ({ newUser, step, setNewUser, disabledButton }) => {
           }
           type="password"
         />
+        <label
+          htmlFor="password"
+          style={{ color: newUser?.password ? "white" : "" }}
+        >
+          Password
+        </label>
+        {error.password && <span className="error-text">{error.password}</span>}
       </div>
-      <p>
-        Already have an account? <Link to="/login">Log in</Link>
-      </p>
       <div className="button-container">
         <div className="progress-container">
           <div className="step"></div>
@@ -43,7 +51,7 @@ const Register2 = ({ newUser, step, setNewUser, disabledButton }) => {
           disabled={disabledButton() === "disabled"}
           className={`btn-secondary ${disabledButton()}`}
         >
-          Next
+          Submit
         </button>
       </div>
     </>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "../styles/registration.css";
 
@@ -11,7 +12,9 @@ import Register1 from "./Register1";
 import Register2 from "./Register2";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
+  const [error, setError] = useState({});
   const [newUser, setNewUser] = useState({
     first_name: "",
     last_name: "",
@@ -25,13 +28,78 @@ const Register = () => {
       : "";
   };
 
+  const disabledSubmit = () => {
+    return newUser.email === "" || newUser.password === "" ? "disabled" : "";
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!validate()) {
+      return;
+    }
+
     if (step === 1) {
       setStep(2);
     } else if (step === 2) {
-      // something
+      setNewUser({
+        first_name: "",
+        last_name: "",
+        email: "",
+        password: "",
+      });
+      navigate("/login");
     }
+  };
+
+  const validate = () => {
+    let errors = {};
+
+    if (step === 1) {
+      errors = validateStep1();
+    } else if (step === 2) {
+      errors = validateStep2();
+    }
+
+    setError(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const validateStep1 = () => {
+    let step1Errors = {};
+
+    if (!newUser.first_name.trim()) {
+      step1Errors.first_name = "First name is required.";
+    }
+
+    return step1Errors;
+  };
+
+  const validateStep2 = () => {
+    let step2Errors = {};
+
+    if (!newUser.email.trim()) {
+      step2Errors.email = "Email is required.";
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(newUser.email)
+    ) {
+      step2Errors.email = "Invalid email format.";
+    }
+
+    if (!newUser.password.trim()) {
+      step2Errors.password = "Password is required.";
+    } else if (!isStrongPassword(newUser.password)) {
+      step2Errors.password = "Password should be strong and meet all criteria.";
+    }
+
+    return step2Errors;
+  };
+
+  const isStrongPassword = (password) => {
+    // At least 8 characters long, 1 uppercase, 1 lowercase, 1 digit, 1 special char
+    return /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/.test(
+      password
+    );
   };
 
   const whichStep = () => {
@@ -76,6 +144,7 @@ const Register = () => {
                   step={step}
                   setNewUser={setNewUser}
                   disabledButton={disabledButton}
+                  error={error}
                 />
               )}
               {step === 2 && (
@@ -83,7 +152,8 @@ const Register = () => {
                   newUser={newUser}
                   step={step}
                   setNewUser={setNewUser}
-                  disabledButton={disabledButton}
+                  disabledButton={disabledSubmit}
+                  error={error}
                 />
               )}
             </form>
