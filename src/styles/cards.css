@@ -1,7 +1,13 @@
 .cards {
   display: flex;
+}
+
+.cards a {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
   margin-bottom: 120px;
 }
 
@@ -41,7 +47,7 @@
   width: 70%;
 }
 
-.cards button h3 {
+.cards a h3 {
   position: relative;
   line-height: 20px;
   font-size: 20px;
@@ -52,7 +58,7 @@
   text-align: center;
 }
 
-.cards button p {
+.cards a p {
   position: relative;
   text-align: center;
   line-height: 16px;
@@ -64,12 +70,12 @@
   transition: opacity 0.3s ease 0.3s;
 }
 
-.cards button:hover p,
-.cards button:hover span {
+.cards a:hover p,
+.cards a:hover span {
   opacity: 1;
 }
 
-.cards button span {
+.cards a span {
   position: absolute;
   text-decoration: none;
   right: 32px;
@@ -82,7 +88,7 @@
   opacity: 0;
 }
 
-.cards button span::before {
+.cards a span::before {
   content: "";
   width: 16px;
   height: 1px;

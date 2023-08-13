@@ -17,6 +17,7 @@ import BuyWorkouts from "./components/BuyWorkouts";
 import Footer from "./components/Footer";
 import Register from "./components/Register";
 import Login from "./components/Login";
+import FirstTimer from "./components/FirstTimer";
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
         />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/first-timer" element={<FirstTimer />} />
       </Routes>
     </Router>
   );

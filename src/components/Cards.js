@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "../styles/cards.css";
 
@@ -6,16 +7,16 @@ const Cards = () => {
   return (
     <div className="container">
       <div className="cards">
-        <button className="first-time">
+        <Link className="first-time" to={"/first-timer"}>
           <h3>First-timer</h3>
           <p>Is it your first time? Discover our next level gym.</p>
           <span>read more</span>
-        </button>
-        <button className="memberships">
+        </Link>
+        <Link className="memberships" to={"/memberships"}>
           <h3>Memberships</h3>
           <p>Become a Gold member now & get unlimited workouts!</p>
           <span>read more</span>
-        </button>
+        </Link>
       </div>
     </div>
   );
