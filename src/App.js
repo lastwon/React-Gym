@@ -18,6 +18,7 @@ import Footer from "./components/Footer";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import FirstTimer from "./components/FirstTimer";
+import { mainBuyWorkoutContent } from "./components/informationContent";
 
 const App = () => {
   return (
@@ -32,7 +33,7 @@ const App = () => {
               <Cards />
               <MainInfo />
               <Carousel />
-              <BuyWorkouts />
+              <BuyWorkouts info={mainBuyWorkoutContent} />
               <Footer />
             </>
           }

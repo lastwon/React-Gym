@@ -1,0 +1,31 @@
+.info-container {
+  max-width: 1128px;
+  margin: 0 auto 120px auto;
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px 24px;
+}
+
+.info-card h3 {
+  line-height: 20px;
+  font-family: var(--font-hackey);
+  font-size: 20px;
+  margin: 0px 0px 8px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+}
+
+.info-card p {
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0px;
+  font-family: var(--font-hackey);
+  letter-spacing: 1px;
+  color: rgb(152, 152, 152);
+}

@@ -2,19 +2,22 @@ import React from "react";
 
 import "../styles/buyWorkouts.css";
 
-const BuyWorkouts = () => {
+const BuyWorkouts = ({ info }) => {
   return (
     <div className="container">
-      <div className="buy-workouts">
-        <div className="banner-content">
-          <h1>Buy workouts</h1>
-          <p>
-            Pay as you go, that's the way we roll. You can buy a single workout
-            or a handful of them, it's up to you!
-          </p>
-          <button className="btn-primary">Let's go</button>
+      {info.map((content) => (
+        <div
+          className="buy-workouts"
+          key={content.id}
+          style={{ backgroundImage: `url(${content.bg})` }}
+        >
+          <div className="banner-content">
+            <h1>{content.title}</h1>
+            <p>{content.text}</p>
+            <button className="btn-primary">{content.button}</button>
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 };
